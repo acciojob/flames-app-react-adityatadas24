@@ -1,6 +1,5 @@
-import React, {useState} from "react";
-import '../styles/App.css';
-
+import React, { useState } from "react";
+import "../styles/App.css";
 
 const arr = ["Siblings", "Friends", "Love", "Affection", "Marriage", "Enemy"];
 
@@ -40,6 +39,7 @@ const App = () => {
       <form>
         <input
           type="text"
+          name="name1"
           data-testid="input1"
           value={name1}
           onChange={(e) => setName1(e.target.value)}
@@ -47,6 +47,7 @@ const App = () => {
 
         <input
           type="text"
+          name="name2"
           data-testid="input2"
           value={name2}
           onChange={(e) => setName2(e.target.value)}
@@ -56,8 +57,7 @@ const App = () => {
           data-testid="calculate_relationship"
           type="submit"
           onClick={calculateRelationship}
-        >
-          Calculate Relationship Future
+        >Calculate Relationship Future
         </button>
 
         <button
@@ -69,8 +69,7 @@ const App = () => {
             setBtnClicked(false);
             setRelationship("");
           }}
-        >
-          Clear
+        >Clear
         </button>
       </form>
 
@@ -78,6 +77,5 @@ const App = () => {
     </div>
   );
 };
-
 
 export default App;
