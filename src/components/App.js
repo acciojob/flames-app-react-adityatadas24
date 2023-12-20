@@ -17,7 +17,7 @@ const App = () => {
     if (name1.trim() === "" || name2.trim() === "") {
       setBtnClicked(false);
       setRelationship("Please Enter valid input");
-      return;
+      return
     }
 
     let str1 = name1;
@@ -31,7 +31,7 @@ const App = () => {
     setName1(str1);
     setName2(str2);
     setBtnClicked(true);
-    setRelationship(arr[(name1.length + name2.length) % 6]);
+    setRelationship(arr[(str1.length + str2.length)%6]);
   }
 
   return (
@@ -42,35 +42,30 @@ const App = () => {
           name="name1"
           data-testid="input1"
           value={name1}
+          placeholder="Enter First Name"
           onChange={(e) => setName1(e.target.value)}
         />
 
-        <input
-          type="text"
+        <input type="text"
           name="name2"
           data-testid="input2"
           value={name2}
-          onChange={(e) => setName2(e.target.value)}
+          placeholder="Enter Second Name"
+          onChange={(e)=>setName2(e.target.value)}
         />
 
-        <button
-          data-testid="calculate_relationship"
-          type="submit"
+        <button data-testid="calculate_relationship" type="submit"
           onClick={calculateRelationship}
-        >Calculate Relationship Future
-        </button>
+        >Calculate Relationship Future</button>
 
-        <button
-          data-testid="clear"
-          type="reset"
-          onClick={() => {
+        <button data-testid="clear" type="reset"
+          onClick={()=>{
             setName1("");
             setName2("");
             setBtnClicked(false);
             setRelationship("");
           }}
-        >Clear
-        </button>
+        >Clear</button>
       </form>
 
       <h3 data-testid="answer">{relationship}</h3>
