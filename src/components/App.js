@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import "../styles/App.css";
+import React, {useState} from "react";
+import '../styles/App.css';
 
 const arr = ["Siblings", "Friends", "Love", "Affection", "Marriage", "Enemy"];
 
@@ -35,7 +35,7 @@ const App = () => {
   }
 
   return (
-    <div>
+    <div id="main">
       <form>
         <input
           type="text"
@@ -72,5 +72,6 @@ const App = () => {
     </div>
   );
 };
+
 
 export default App;
