@@ -2,6 +2,7 @@ import React, { useState} from "react";
 import '../styles/App.css';
 
   const arr = ["Siblings", "Friends", "Love", "Affection", "Marriage", "Enemy"];
+  
   const App = () => {
     const [name1, setName1] = useState("");
     const [name2, setName2] = useState("");
@@ -30,7 +31,7 @@ import '../styles/App.css';
       setName1(str1);
       setName2(str2);
       setBtnClicked(true);
-      setRelationship(arr[(name1.length + name2.length) % 6]);
+      setRelationship(arr[(name1.length + name2.length)%6]);
     }
   
     return (
